@@ -1,0 +1,28 @@
+{
+  "vcap": {
+    "services": {
+      "redis": [
+        {
+          "label": "redis",
+          "provider": null,
+          "plan": "5-0-7",
+          "name": "default-redis",
+          "tags": [
+            "redis",
+            "keyvalue",
+            "database"
+          ],
+          "instance_name": "default-redis",
+          "binding_name": null,
+          "credentials": {
+            "Protocol": "redis",
+            "host": "host.docker.internal",
+            "port": 6379
+          },
+          "syslog_drain_url": null,
+          "volume_mounts": []
+        }
+      ]
+    }
+  }
+}

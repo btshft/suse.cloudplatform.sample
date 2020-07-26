@@ -1,0 +1,26 @@
+---
+applications:
+  - name: counters-api
+    path: ./backend/API
+    memory: 256m
+    instances: 1
+    buildpacks:
+      - https://github.com/cloudfoundry/dotnet-core-buildpack.git
+    stack: cflinuxfs3
+    services:
+      - default-redis
+    routes:
+      - route: counters-api.cap.explore.suse.dev
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: 1
+      DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+
+  - name: counters-ui
+    path: ./frontend/ui/dist
+    memory: 128m
+    instances: 1
+    buildpacks:
+      - staticfile_buildpack
+    stack: cflinuxfs3
+    routes:
+      - route: counters.cap.explore.suse.dev
