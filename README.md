@@ -5,6 +5,6 @@ Demo: https://counters.cap.explore.suse.dev
 
 ## Stack
 
-UI: Vue
-Backend: ASP.NET Core 3.1
-Storage: Redis
+* UI: Vue
+* Backend: ASP.NET Core 3.1
+* Storage: Redis
