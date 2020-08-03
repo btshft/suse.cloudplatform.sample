@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text.Json.Serialization;
 
 namespace Suse.CloudPlatform.API.Connectors.Models
 {

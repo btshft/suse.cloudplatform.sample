@@ -3,10 +3,10 @@ applications:
   - name: counters-api
     path: ./backend/API
     memory: 256m
-    instances: 1
+    instances: 4
+    stack: sle15
     buildpacks:
-      - https://github.com/cloudfoundry/dotnet-core-buildpack.git
-    stack: cflinuxfs3
+      - dotnet-core_buildpack
     services:
       - default-redis
     routes:
@@ -19,8 +19,8 @@ applications:
     path: ./frontend/ui/dist
     memory: 128m
     instances: 1
+    stack: sle15
     buildpacks:
       - staticfile_buildpack
-    stack: cflinuxfs3
     routes:
       - route: counters.cap.explore.suse.dev

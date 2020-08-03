@@ -1,10 +1,7 @@
-﻿using System;
-using System.Text;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Suse.CloudPlatform.API.Connectors.Models;
 using Suse.CloudPlatform.API.Connectors.Options;
-using Utf8Json;
 
 namespace Suse.CloudPlatform.API.Connectors
 {

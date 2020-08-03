@@ -1,6 +1,12 @@
 <template>
-  <div id="app" class="uk-container">
+  <div
+    id="app"
+    class="uk-container"
+  >
     <Counters />
+    <div class="uk-text-center uk-margin-top uk-text-muted">
+      <p>App IP: <code>{{ serverIp }}</code> </p>
+    </div>
   </div>
 </template>
 
@@ -8,6 +14,7 @@
 import UIkit from "uikit";
 import Icons from "uikit/dist/js/uikit-icons";
 import Counters from "@/components/Counters";
+import AppInfoApi from "@/api/appInfo.js";
 
 UIkit.use(Icons);
 
@@ -16,6 +23,20 @@ export default {
   components: {
     Counters,
   },
+
+  data () {
+    return {
+      clientIp: null,
+      serverIp: null
+    }
+  },
+
+  async created () {
+    const appInfo = await AppInfoApi.methods.get();
+    if (appInfo.serverIp) {
+      this.serverIp = appInfo.serverIp;
+    }
+  }
 };
 </script>
 
